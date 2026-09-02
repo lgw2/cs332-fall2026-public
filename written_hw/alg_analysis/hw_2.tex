@@ -21,9 +21,9 @@
 \begin{center}
 \Large\textbf{CSCI 332, Fall 2026}%
 \\
-\LARGE\textbf{Homework 1}%
+\LARGE\textbf{Homework 2}%
 \\[0.5ex]
-\large Due Monday, August 31 Anywhere on Earth (6am Tuesday)
+\large Due Tuesday, September 8 Anywhere on Earth (6am Wednesday)
 \end{center}
 
 \bigskip
@@ -55,7 +55,7 @@ Remember, you may access \EMPH{any} resource in preparing your solution to the h
 \newpage
 %----------------------------------------------------------------------
 
-\headers{CSCI 332}{Homework 1 (due August 31)}{Fall 2026}
+\headers{CSCI 332}{Homework 2 (due September 8)}{Fall 2026}
 
 
 \begin{enumerate}
@@ -77,40 +77,54 @@ You will be asked to resubmit your homework if this section is blank.
 Remember that no matter what resources you consulted, you must write your solutions
 \emph{in your own words}.
 
-\item 
+\item (1 points) In class, we said that the exact running time of an algorithm is the number of primitive operations it
+takes on an input of size $n$. (Usually, we disregard this precise running time and instead give some simpler function
+such that the precise function is big O if the other function.)
+The course textbook (Algorithms by Jeff Erickson) suggests defining the precise running time in a different way.
+What is that different way? \emph{Hint: Look at Section, 0.6 Analyzing Algorithms.}
 
-For your upcoming family reunion, you are in charge of one of the day's activities.
-You decide to have the family head out in two-person canoes. However, you know that
-you need to be careful in pairing your family members up, because they can get jealous
-if they get stuck spending time with one person when they would prefer to spend time with another.
-Because you are taking CSCI 332, you wonder if you could re-work the stable matching
-definition from the hospital-student problem to work for your canoe pair problem. You consider
-asking each family member to order the rest of the family members according to their
-preference for a canoe partner.
+\item Consider the following basic problem. You're given an array $A$ consisting of
+$n$ integers $A[1], A[2], \ldots, A[n]$. You'd like to output a two-dimensional
+$n$-by-$n$ array $B$ in which $B[i,j]$ (for $i < j$) contains the sum of array
+entries $A[i]$ through $A[j]$--that is, the sum $A[i] + A[i+1] + \cdots + A[j]$.
+(The value of array entry $B[i,j]$ is left unspecified whenever $i \leq j$, so
+it doesn't matter what is output by those values.)
+\begin{enumerate}
+\item (1 point) Give the resulting $B$ for $A=[4, -9, 12, 2]$.
+\item (3 point) Here is an algorithm for this problem:
 
-For example, for $n=4$ family reunion attendees, you might get the following list:
+\begin{algo}
+   For $i = 1, 2, \ldots, n$\+ \\
+   For $j = i + 1, i + 2, \ldots, n$\+ \\
+   Add up array entries $A[i]$ through $A[j]$\\
+   Store the result in $B[i,j]$\- \\
+   Endfor\- \\
+   Endfor
+\end{algo}
 
-\begin{center}
-\begin{tabular}{ c c c }
-    Alice: Ben, Cleo, Desiree \\
-    Ben: Cleo, Alice, Desiree \\
-    Cleo: Alice, Ben, Desiree\\
-    Desiree: Alice, Ben, Cleo
-\end{tabular}
-\end{center}
+ Give a function $f$ that counts the number of primitive operations performed
+    by the algorithm on an input of size $n$. This should be an exact count, not an asymptotic one!
+    If you aren't sure which operations count as primitive operations, either declare which ones you are considering
+    to be primitive operations, or ask.
 
+    \item (2 points) Choose a function $g$ that has the following properties:
+    \begin{itemize}
+        \item The $f(n)$ you gave above is $O(g(n)$
+        \item The $f(n)$ you gave above is $\Omega(g(n))$
+    \end{itemize}
 
-\begin{enumerate}[(a)]
-    \item (3 points) Re-work the definition of stable matching from the hospital-medical student
-        version of the problem to the canoe pair problem.
-        You should describe the input of the problem and the desired output of the problem.
-    \item (3 points) Does a stable matching always exist for the canoe pair problem?
-    \item (3 points) How do you know?
+     \item (2 points) Although the algorithm you
+    analyzed in parts (b)--(c) is the most natural way to solve the
+    problem---after all, it just iterates through the relevant entries of the
+    array $B$, filling a value for each---it contains some highly unnecessary
+    sources of inefficiency. Give a different algorithm to solve this problem,
+    with an asymptotically better running time.
+
 \end{enumerate}
 
-\item (1 point) Back to the hospital-student stable matching problem: describe
-and analyze an efficient algorithm to determine whether a given set of preferences
-has a \emph{unique} stable matching.
+    \item (1 point) What does ``asymptotically better'' mean?
+
+
 
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%
