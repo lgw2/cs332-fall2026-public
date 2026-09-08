@@ -1,0 +1,139 @@
+% ---------
+% --------
+%!TEX TS-program = pdflatex
+%!TEX encoding = UTF-8 Unicode
+%!TEX spellcheck = English (Aspell)
+
+\documentclass[11pt]{article}
+\usepackage{lucy,handout,graphicx}
+\usepackage{fourier-orns}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem} % either use this (simple) or
+\usepackage{tikz}
+
+\def\Cdot{\mathbin{\text{\normalfont \textbullet}}}
+\def\Sym#1{\texttt{\color{BrickRed}#1}}
+\def\BlueSym#1{\textbf{\texttt{\color{RoyalBlue}#1}}}
+\allowdisplaybreaks
+
+\begin{document}
+
+\begin{center}
+\Large\textbf{CSCI 332, Fall 2026}%
+\\
+\LARGE\textbf{Homework 3}%
+\\[0.5ex]
+\large Due Monday, September 14 Anywhere on Earth (6am Tuesday)
+\end{center}
+
+\bigskip
+\hrule
+\bigskip
+
+\subsection*{Submission Requirements}
+\begin{itemize}
+    \item Type or clearly hand-write your solutions into a PDF format so that they are legible and professional. Submit your PDF on Gradescope. 
+    \item Do not submit your first draft. Type or clearly re-write your solutions for your final submission. If your submission is not legible, we will ask you to resubmit.
+    \item Use Gradescope to assign problems to the correct page(s) in your solution. If you do not do this correctly, we will ask you to resubmit.
+\end{itemize}
+
+\subsection*{Academic Integrity}
+
+Remember, you may access \EMPH{any} resource in preparing your solution to the homework. However, you \EMPH{must}
+\begin{itemize}
+    \item write your solutions in your own words, and
+    \item credit every resource you use (for example: ``Bob Smith helped me on
+    this problem. He took this course at UM in Fall 2020''; ``I found a solution
+    to a problem similar to this one in the lecture notes for a different
+    course, found at this link: www.profzeno.com/agreatclass/lecture10''; ``Here is a link to the full transcript of my chat with ChatGPT about the problems on this HW''.)
+    Ask if you need any clarifications about how to properly cite your sources!
+\end{itemize}
+
+
+
+
+\newpage
+%----------------------------------------------------------------------
+
+\headers{CSCI 332}{Homework 3 (due September 14)}{Fall 2026}
+
+
+\begin{enumerate}
+%\parindent 1.5em \itemsep 4ex plus 0.5fil
+
+%----------------------------------------------------------------------
+
+\item (0 points) List the resources you used for each problem in this homework. If you used no resources except
+lecture notes and videos and the linked textbook, you can say ``none''. If you used
+an AI tool, you should put a link to your full conversation here, and you must
+use the
+\href{https://umaal.org/files/teaching/csci332_fall2026/agents.md}{provided
+prompt}
+ to guide the AI to act
+as a tutor, not an answer-provider.
+
+You will be asked to resubmit your homework if this section is blank.
+
+Remember that no matter what resources you consulted, you must write your solutions
+\emph{in your own words}.
+
+\item (3 points) Consider the number of the syllables in the pronunciation of the integer $n$.
+For example, when $n=1$, the pronunciation is ``one'' and there is one syllable.
+For each of the following, give the tightest/simplest function possible, or state that
+there is no function possible.
+\begin{enumerate}
+    \item Give a function $f(n)$ so that the number of syllables in the pronunciation of $n$ is $O(f(n))$ for all $n$.
+    \item Give a funciton $g(n)$ so that the number of syllables in the pronunciation is of $n$ is $\Omega(g(n))$ for all $n$.
+    \item Guve a function $h(n)$ so that the number of syllables in the pronunciation is of $n$ is $\Theta(h(n))$ for all $n$.
+\end{enumerate}
+
+\item (3 points) Prove that $\log_a n = \Theta(\log_b n)$ for any positive constants $a, b
+> 1$ by proving each of the following. You must use the definition of big-O and
+big-Omega in your proofs; that is, you must give a $c$ and an $n_0$. (Hint: Use the change of base formula for logarithms,
+which states that $\log_a n = \frac{\log_b n}{\log_b a}$.)
+
+    \begin{enumerate}[(a)]
+        \item $log_a n = O(log_b n)$
+        \item $log_a n = \Omega(log_b n)$
+    \end{enumerate} 
+
+\item (4 points) For each of the following algorithms, you will analyze both the worst and best case runtimes.
+\begin{enumerate}
+    \item
+    \begin{algo}
+        \underline{IsPrime(n):}\\
+        \> if $n < 2$\\
+        \> \> return False\\
+        \> for $d = 2$ to $\lfloor \sqrt{n} \rfloor$\\
+        \> \> if $n \bmod d = 0$\\
+        \> \> \> return False\\
+        \> return True
+    \end{algo}
+    \begin{enumerate}
+        \item Describe a best-case input to IsPrime.
+        \item Give a function $f(n)$ so that the best-case runtime of IsPrime is $\Theta(f(n))$.
+        \item Describe a worst-case input to IsPrime.
+        \item Give a function $f(n)$ so that the worst-case runtime of IsPrime is $\Theta(f(n))$.
+    \end{enumerate}
+    \item 
+    \begin{algo}
+        \underline{HasDuplicate(A[1..n]):}\\
+        \> for $i = 1$ to $n$\\
+        \> \> for $j = i+1$ to $n$\\
+        \> \> \> if $A[i] = A[j]$\\
+        \> \> \> \> return True\\
+        \> return False
+    \end{algo}
+    \begin{enumerate}
+        \item Describe a best-case input to HasDuplicate.
+        \item Give a function $f(n)$ so that the best-case runtime of HasDuplicate is $\Theta(f(n))$.
+        \item Describe a worst-case input to HasDuplicate.
+        \item Give a function $f(n)$ so that the worst-case runtime of HasDuplicate is $\Theta(f(n))$.
+    \end{enumerate}
+\end{enumerate}
+
+
+
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%
+\end{document}
