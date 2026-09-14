@@ -82,15 +82,16 @@ For example, when $n=1$, the pronunciation is ``one'' and there is one syllable.
 For each of the following, give the tightest/simplest function possible, or state that
 there is no function possible.
 \begin{enumerate}
-    \item Give a function $f(n)$ so that the number of syllables in the pronunciation of $n$ is $O(f(n))$ for all $n$.
-    \item Give a funciton $g(n)$ so that the number of syllables in the pronunciation is of $n$ is $\Omega(g(n))$ for all $n$.
-    \item Give a function $h(n)$ so that the number of syllables in the pronunciation is of $n$ is $\Theta(h(n))$ for all $n$.
+    \item Give a function $f(n)$ so that the number of syllables in the pronunciation of $n$ is $O(f(n))$ for all $n \geq 1$.
+    \item Give a function $g(n)$ so that the number of syllables in the pronunciation of $n$ is $\Omega(g(n))$ for all $n \geq 1$.
+    \item Give a function $h(n)$ so that the number of syllables in the pronunciation of $n$ is $\Theta(h(n))$ for all $n \geq 1$.
 \end{enumerate}
 
-\item (3 points) Prove that $\log_a n = \Theta(\log_b n)$ for any positive constants $a, b
-> 1$ by proving each of the following. You must use the definition of big-O and
-big-Omega in your proofs; that is, you must give a $c$ and an $n_0$. (Hint: Use the change of base formula for logarithms,
-which states that $\log_a n = \frac{\log_b n}{\log_b a}$.)
+\item (3 points) Prove that $\log_a n = \Theta(\log_b n)$ for any positive
+constants $a \neq 1, b$ by proving each of the following. You must use the
+definition of big-O and big-Omega in your proofs; that is, you must give a $c$
+and an $n_0$. (Hint: Use the change of base formula for logarithms, which states
+that $\log_a n = \frac{\log_b n}{\log_b a}$.)
 
     \begin{enumerate}[(a)]
         \item $log_a n = O(log_b n)$
