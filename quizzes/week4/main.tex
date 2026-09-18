@@ -1,0 +1,121 @@
+% ---------
+% --------
+%!TEX TS-program = pdflatex
+%!TEX encoding = UTF-8 Unicode
+%!TEX spellcheck = English (Aspell)
+
+\documentclass[11pt]{article}
+\usepackage{lucy,handout,graphicx}
+\usepackage{fourier-orns}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem} % either use this (simple) or
+\usepackage{tikz}
+
+\allowdisplaybreaks
+
+\begin{document}
+
+\noindent Name \underline{\hspace{12cm}}\\
+
+
+\begin{center}
+\LARGE\textbf{Quiz 3}%
+\end{center}
+
+
+\begin{enumerate}
+
+    \item (1 point)
+    Here's the pseudocode to merge two sorted arrays into one sorted array in $\Theta(n)$ time.
+    \begin{algo}
+    Merge(arrays $A$ and $B$ of length $n$):\+\\
+    let array $C$ be a new array of length $2n$\\
+    let $i = 1$, $j = 1$, $k = 1$\\
+    while $i \leq n$ and $j \leq m$:\+\\
+        if $A[i] \leq B[j]$:\+\\
+            $C[k] = A[i]$\\
+            $i = i + 1$\-\\
+        else:\+\\
+            $C[k] = B[j]$\\
+            $j = j + 1$\-\\
+        k = k + 1\-\\
+    return $C$\-\\
+    \end{algo}
+    Fill in the recursive case of the pseudocode for Mergesort.
+
+    \begin{algo}
+    Mergesort(array $A$ of length $n$):\+\\
+    if $n \leq 1$ \+:\\
+        return $A$\-\\
+    else:
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \hspace{5in}
+
+    \end{algo}
+
+\newpage Now, we will solve a recurrence (not the one for Mergesort) using
+recursion trees.
+
+Consider the recurrence $T(n) = 2T(n/3) + n^2, T(1) = 1$.
+
+\item (2 points) In the left boxes, draw the first three levels of this recursion tree.
+In the boxes next to them, write the total work on that level.
+
+\begin{center}
+\begin{tikzpicture}[
+  boxL/.style={draw, rectangle, minimum width=9cm, minimum height=2.2cm, inner sep=6mm},
+  boxR/.style={draw, rectangle, minimum width=4.5cm, minimum height=2.2cm, inner sep=6mm},
+  smalllabel/.style={font=\scriptsize, anchor=north west}
+]
+
+% positions: (x,y)
+\node[boxL] (L0) at (0,4.0) {};
+\node[smalllabel] at (L0.north west) {Level 0};
+
+\node[boxL] (L1) at (0,1.5) {};
+\node[smalllabel] at (L1.north west) {Level 1};
+
+\node[boxL] (L2) at (0,-1) {};
+\node[smalllabel] at (L2.north west) {Level 2};
+
+\node[boxR] (R0) at (7,4.0) {};
+\node[smalllabel] at (R0.north west) {Sum level 0};
+
+\node[boxR] (R1) at (7,1.5) {};
+\node[smalllabel] at (R1.north west) {Sum level 1};
+
+\node[boxR] (R2) at (7,-1) {};
+\node[smalllabel] at (R2.north west) {Sum level 2};
+
+\end{tikzpicture}
+\end{center}
+\item (2 points) What is the work per level in terms of level $\ell$? You should provide a function of $n$ and $\ell$ here.
+\vspace{1in}
+\item (2 points) Is the work per level (circle one)
+\begin{itemize}
+    \item increasing (work is dominated by leaves)
+    \item decreasing (work is dominated by root)
+    \item the same (work is the same at every level)
+\end{itemize}
+\item (1 points)  What is the total number of levels in the tree? (fill in the base and the argument of the logarithm)
+\[
+\text{number of levels} = \log_{\underline{\hspace{1cm}}}(\underline{\hspace{1cm}})
+\]
+
+\item (2 points) What is the overall runtime of the recurrence?
+
+
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%
+\end{document}
