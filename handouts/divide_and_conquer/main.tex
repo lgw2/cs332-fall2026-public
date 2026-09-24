@@ -1,0 +1,77 @@
+% ---------
+% --------
+%!TEX TS-program = pdflatex
+%!TEX encoding = UTF-8 Unicode
+%!TEX spellcheck = English (Aspell)
+
+\documentclass[11pt]{article}
+\usepackage{lucy,handout,graphicx}
+\usepackage{fourier-orns}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem} % either use this (simple) or
+\pagestyle{empty}
+
+\allowdisplaybreaks
+
+\begin{document}
+
+
+\begin{center}
+\Large\textbf{CSCI 332, Fall 2026}%
+\\
+\LARGE\textbf{In-class Activity}%
+\end{center}
+
+In this activity, you will analyze the runtime of the gradeschool algorithm
+for multiplying two numbers $x$ and $y$, where $x$ has $m$ digits and $y$ has 
+$n$ digits.
+
+\begin{enumerate}
+   \item 
+First, let's consider the grade-school algorithm for multiplication.
+This algorithm works by multiplying each digit of the second number
+by the entire first number, shifting appropriately, and then summing
+the results.
+
+For example, to multiply 5281 by 23492, we would compute (you should fill this
+in):
+
+\[
+\begin{array}{r}
+   \phantom{00000}5281 \\
+\times\phantom{0}23492 \\
+\hline
+\end{array}
+\]
+\vspace{2in}
+
+\item Check your answer with another group. Do they agree?
+
+\item  What ``milestones'' would be good to count in in this algorithm to get a
+sense of its runtime? What is the runtime of this algorithm in terms of $m$ and
+$n$? 
+\vspace{2in}
+
+\item Is the runtime
+different in a best and worst case? Try to give $\Theta$ bounds for each.
+\newpage
+
+\item What are $m$ and $n$ in terms of the values of $x$ and $y$? For example,
+if $x = 5281$ and $y = 23492$, what are $m=4$ and $n=5$. What is the general formula for $m$ and $n$?
+
+\vspace{1in}
+
+\item In the mid-1950s, Andrei Kolmogorov, one of the giants of 20th century
+mathematics, publicly conjectured that there is no algorithm to multiply two
+n-digit numbers in subquadratic time (less than $O(n^2)$). Does your group (circle one):
+\begin{itemize}
+   \item Agree: $O(n^2)$ is the best we can do.
+   \item Disagree: There is a better algorithm (for example, $O(n^{1.5})$ or $O(n \log n)$).
+   \item We still don't know: no one has been able to come up with a proof either way.
+\end{itemize}
+
+
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%
+\end{document}
