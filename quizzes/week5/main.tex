@@ -1,0 +1,62 @@
+% ---------
+% --------
+%!TEX TS-program = pdflatex
+%!TEX encoding = UTF-8 Unicode
+%!TEX spellcheck = English (Aspell)
+
+\documentclass[11pt]{article}
+\usepackage{lucy,handout,graphicx}
+\newproof{theorem*}{Theorem}
+\usepackage{fourier-orns}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem} % either use this (simple) or
+\usepackage{tikz}
+\newcommand{\ulinefill}{\leavevmode\leaders\hrule height 0.4pt\hfill\kern0pt}
+\pagestyle{empty}
+
+\allowdisplaybreaks
+
+\begin{document}
+
+\noindent Name \underline{\hspace{12cm}}\\
+
+
+\begin{center}
+\LARGE\textbf{Quiz 4}%
+\end{center}
+
+Fill in the missing parts of the proof by induction of the theorem below.
+
+
+\begin{theorem*}
+    For every finite undirected graph, the sum of all vertex degrees is equal to
+    twice the number of edges.
+\end{theorem*}
+
+\begin{proof}
+\noindent (2 points) Universal declaration: Let $G$ be an arbitrary 
+\vspace{.3in}
+
+\noindent We induct on $m$, the number of edges in $G$.
+\\
+
+\noindent (3 points) Induction hypothesis:
+\vspace{.8in}    
+
+\noindent There are two cases:
+\begin{itemize}
+    \item 
+Base case: Suppose $m=0$. Then every degree is zero, so the sum of the degrees is $0=2*0$, so the
+claim holds.
+\item (5 points) Inductive case: Suppose 
+\vspace{3.8in}
+\end{itemize}
+\noindent The two cases are exhaustive, and the claim holds in both cases.
+Therefore, the claim that every finite undirected graph with $m$ edges has a sum
+of vertex degrees equal to $2m$ holds for every nonnegative integer $m$.
+
+    
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%
+\end{document}
