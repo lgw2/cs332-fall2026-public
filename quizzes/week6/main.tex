@@ -1,0 +1,133 @@
+% ---------
+% --------
+%!TEX TS-program = pdflatex
+%!TEX encoding = UTF-8 Unicode
+%!TEX spellcheck = English (Aspell)
+
+\documentclass[11pt]{article}
+\usepackage{lucy,handout,graphicx}
+\newproof{theorem*}{Theorem}
+\usepackage{fourier-orns}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem} % either use this (simple) or
+\usepackage{tikz}
+\newcommand{\ulinefill}{\leavevmode\leaders\hrule height 0.4pt\hfill\kern0pt}
+\pagestyle{empty}
+
+\allowdisplaybreaks
+
+\begin{document}
+
+\noindent Name \underline{\hspace{12cm}}\\
+
+
+\begin{center}
+\LARGE\textbf{Quiz 6}%
+\end{center}
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+Recall the problem from the Prairie Learn; its complete statement and solution
+is provided on the other side of this sheet. For this quiz, you need to fill in
+the solution for a similar problem.
+
+\textbf{Problem statement.}
+Momo is planning another road trip from mile marker 1 to miles marker $n$.
+However, she can now go three miles without stopping! Otherwise, the problem
+is the same: she is currently at mile marker 1, and she pays $HotelCosts[i]$
+wherever she stops for the night.
+Determine the minimum possible total cost of all hotels that Momo
+stays in during her trip.
+\begin{enumerate}
+	\item Suppose $HotelCosts = [0,1, 4, 3, 2,0]$. At which mile marker(s) does an optimal trip stop?
+    \underline{\hspace{4in}}
+    \item What is the cost of the optimal trip from (a)? \underline{\hspace{1in}}
+    \item Complete the English recursive subproblem definition for this problem.
+    \\Let $MinCost(i)$ denote...
+    \vspace{1in}
+    \item For what value of $i$ does $MinCost(i)$ give the solution to the full problem?
+    \underline{\hspace{1in}}
+    \item Fill in the recurrence for this problem. You may not need every row given.
+\[
+MinCost(i)=
+\begin{cases}
+\underline{\hspace{3.5in}} & \text{if } \underline{\hspace{.5in}}\\
+\underline{\hspace{3.5in}} & \text{if } \underline{\hspace{.5in}}\\
+\underline{\hspace{3.5in}} & \text{if } \underline{\hspace{.5in}}\\
+\underline{\hspace{3.5in}} & \text{if } \underline{\hspace{.5in}}\\
+\underline{\hspace{3.5in}} & \text{if } \underline{\hspace{.5in}}\\
+\end{cases}
+\]
+    \item Complete the pseudocode for a memoized algorithm to solve the problem.
+    \begin{algo}
+    ComputeMinTotalCost($HotelCosts[1..n]$)\+\\
+   	let array $MinCost[1..n]$\\ 
+    \hspace{6in}
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \\
+    \end{algo}
+\end{enumerate}
+
+\newpage
+
+\subsection*{Problem from Prairie Learn}
+Momo is planning a road trip along a highway with $n$ mile markers, numbered
+from $1$ through $n$. Momo is currently at mile marker $1$, and she would like
+to travel to mile marker $n$. However, Momo has a very low attention span and
+gets exhausted easily, so she can only drive 1 or 2 miles forward on a single
+day.
+
+Luckily, there is a hotel right next to each mile marker; the costs of these
+hotels are provided in the array $HotelCosts[1..n]$. If Momo stops at mile $i$
+at the end of the day, she will stay overnight in a hotel that costs
+$HotelCosts[i]$. Determine the minimum possible total cost of all the hotels
+that Momo stays in during her road trip.
+
+Momo does not have to stay in a hotel at mile $1$ or mile $n$, so
+$HotelCosts[1]=HotelCosts[n]=0$. She cannot stay in the same hotel two nights
+in a row. For example, if $HotelCosts=[0,1,374,3,0]$, an optimal trip stops at
+miles 2 and 4, for a total cost of $1+3=4$.
+\begin{itemize}
+    \item 
+\textbf{English recursive subproblem definition.} Let
+$MinCost(i)$ denote the minimum possible cost of traveling from mile
+to mile 1 to mile $i$ , including the cost of the hotel at mile $i$.
+\item
+\textbf{Recurrence.} The trip to mile $i$ must come from mile $i-1$ or
+ mile $i-2$. Thus,
+\[
+MinCost(i)=
+\begin{cases}
+0 & \text{if } i=1,\\
+HotelCosts[2] & \text{if } i=2,\\
+HotelCosts[i]+\min\{MinCost(i-1),MinCost(i-2)\} & \text{if } 3\leq i\leq n.
+\end{cases}
+\]
+\item 
+\textbf{Memoized algorithm.} 
+\begin{algo}
+ComputeMinTotalCost(array $HotelCosts[1..n]$):\+\\
+	let array $MinCost[1..n]$\\
+	$MinCost[1] = 0$\\
+	$MinCost[2] = HotelCosts[2]$\\
+	for $i = 3$ to $n$:\+\\
+		$MinCost[i] = HotelCosts[i] + \min\{MinCost[i-1], MinCost[i-2]\}$\\
+	\-\\
+	return $MinCost[n]$\-\\
+\end{algo}
+\end{itemize}
+
+
+
+\end{document}

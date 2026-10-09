@@ -1,0 +1,52 @@
+% ---------
+% --------
+%!TEX TS-program = pdflatex
+%!TEX encoding = UTF-8 Unicode
+%!TEX spellcheck = English (Aspell)
+
+\documentclass[11pt]{article}
+\usepackage{jeffe,handout,graphicx}
+\usepackage{fourier-orns}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem} % either use this (simple) or
+\usepackage{tikz}
+\pagestyle{empty}
+
+\allowdisplaybreaks
+
+\begin{document}
+
+
+\begin{center}
+\Large\textbf{CSCI 332, Fall 2025}%
+\\
+\LARGE\textbf{In-class Activity}%
+\end{center}
+For each of the three problems, answer the questions at the bottom of the sheet.
+\begin{enumerate}
+   \item 
+You are climbing a staircase. It takes n steps to reach the top. Each time you
+can either climb 1 or 2 steps. In how many distinct ways can you climb to the
+top?
+\item
+You are given an integer array cost where $cost[i]$ is the cost of ith step on a
+staircase. Once you pay the cost, you can either climb one or two steps. You
+can either start from the step with index 0, or the step with index 1. Return the
+minimum cost to reach the top of the staircase.
+\item
+In your country, there are only coins of denominations 1, 3, and 4. Given a
+nonnegative integer $n$, what is the fewest number of coins you can use to
+represent $n$?
+\end{enumerate}
+
+\subsection*{Questions to answer for each problem: }
+\begin{enumerate}
+   \item Write the definition of the recursive subproblems you will solve. Make sure to 
+   give these a descriptive name.
+   \item Write the recurrence to solve your recursive subproblems.
+   \item In what direction will you fill your memoization array?
+   \item Write the pseudocode for the memoized algorithm.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%
+\end{document}
