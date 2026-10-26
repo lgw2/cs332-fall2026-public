@@ -1,0 +1,57 @@
+%!TEX TS-program = pdflatex
+%!TEX encoding = UTF-8 Unicode
+%!TEX spellcheck = English (Aspell)
+
+\documentclass[11pt]{article}
+\usepackage{lucy,handout,graphicx}
+
+% =========================================================
+\begin{document}
+
+
+\noindent 
+A robot can operate in one of $n$ modes. You are given a list of $m$ commands that change
+the robot from one mode to another; the reverse command may not exist.
+The
+manufacturer claims: ``No matter which commands you execute, you can always
+restore the robot to the mode it was in before you started.'' 
+Give an efficient algorithm to check this claim. (Note: there is an example input
+at the bottom of the page, but you should answer these questions for a general input.)
+
+\begin{itemize}\itemsep40pt
+\item What are the vertices?  What does each vertex represent?
+\item What are the edges?  Are they directed or undirected?
+\item If the vertices and/or edges have associated values, what are they?
+\item \textbf{What is the precise relationship between your graph and the stated problem?}
+\item What standard graph algorithm are you using to solve the problem?
+\item What is the running time of your entire algorithm, \emph{including} the time to build the graph, \emph{as a function of the original input parameters}?
+\end{itemize}
+
+\vspace{1in}
+
+
+Here is an example you may want to explore:
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+Command & Starting mode & Resulting mode \\
+\hline
+Begin charging  & Standby   & Charging  \\
+Stop charging   & Charging  & Standby   \\
+Switch to mop   & Vacuuming & Mopping   \\
+Begin drying    & Mopping   & Drying    \\
+Return to base  & Drying    & Returning \\
+Resume cleaning & Returning & Vacuuming \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+
+
+%----------------------------------------------------------------------
+
+
+\end{document}
