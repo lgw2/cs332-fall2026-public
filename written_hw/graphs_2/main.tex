@@ -1,0 +1,120 @@
+% ---------
+% --------
+%!TEX TS-program = pdflatex
+%!TEX encoding = UTF-8 Unicode
+%!TEX spellcheck = English (Aspell)
+
+\documentclass[11pt]{article}
+\usepackage{lucy,handout,graphicx}
+\usepackage{fourier-orns}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem} % either use this (simple) or
+\usepackage{tikz}
+
+\def\Cdot{\mathbin{\text{\normalfont \textbullet}}}
+\def\Sym#1{\texttt{\color{BrickRed}#1}}
+\def\BlueSym#1{\textbf{\texttt{\color{RoyalBlue}#1}}}
+\allowdisplaybreaks
+
+\begin{document}
+
+\begin{center}
+\Large\textbf{CSCI 332, Fall 2026}%
+\\
+\LARGE\textbf{Homework 9 (Part 2---Part 1 is on Prairie Learn)}%
+\\[0.5ex]
+\large Due Monday, November 2 Anywhere on Earth (6am Tuesday)
+\end{center}
+
+\bigskip
+\hrule
+\bigskip
+
+\subsection*{Submission Requirements}
+\begin{itemize}
+    \item Type or clearly hand-write your solutions into a PDF format so that they are legible and professional. Submit your PDF on Gradescope. 
+    \item Do not submit your first draft. Type or clearly re-write your solutions for your final submission. If your submission is not legible, we will ask you to resubmit.
+    \item Use Gradescope to assign problems to the correct page(s) in your solution. If you do not do this correctly, we will ask you to resubmit.
+\end{itemize}
+
+\subsection*{Academic Integrity}
+
+Remember, you may access \EMPH{any} resource in preparing your solution to the homework. However, you \EMPH{must}
+\begin{itemize}
+    \item write your solutions in your own words, and
+    \item credit every resource you use (for example: ``Bob Smith helped me on
+    this problem. He took this course at UM in Fall 2020''; ``I found a solution
+    to a problem similar to this one in the lecture notes for a different
+    course, found at this link: www.profzeno.com/agreatclass/lecture10''; ``Here is a link to the full transcript of my chat with ChatGPT about the problems on this HW''.)
+    Ask if you need any clarifications about how to properly cite your sources!
+\end{itemize}
+
+
+
+
+\newpage
+%----------------------------------------------------------------------
+    
+\headers{CSCI 332}{Homework 9 (due November 2)}{Fall 2026}
+
+
+\begin{enumerate}
+%\parindent 1.5em \itemsep 4ex plus 0.5fil
+
+%----------------------------------------------------------------------
+
+\item (0 points) List the resources you used for each problem in this homework. If you used no resources except
+lecture notes and videos and the linked textbook, you can say ``none''. If you used
+an AI tool, you should put a link to your full conversation here, and you must
+use the
+\href{https://umaal.org/files/teaching/csci332_fall2026/agents.md}{provided
+prompt}
+ to guide the AI to act
+as a tutor, not an answer-provider.
+
+You will be asked to resubmit your homework if this section is blank.
+
+Remember that no matter what resources you consulted, you must write your solutions
+\emph{in your own words}.
+
+\item Your best friend is attending college on the other side of the country. They have
+a BIG secret to share, but they don't trust any communication method except face-to-face. (What if the phones
+are tapped?) Thus, (blowing off all of your responsibilities), you have decided that you will
+both get in your cars and start driving toward one another. However,
+(to minimize the impact of said blowing off of responsibilities), you want to meet in the city in the middle
+that you can both reach as soon as possible.
+
+You have the map of the country stored as a weighted graph $G=(V, E)$
+where the vertices $V$ are the cities and the edges $E$ are roads
+that directly connect two cities. Each edge has a weight $t(e)$
+equal to the time it drive between the edge's endpoints.
+One vertex is labeled $y$, where you live, and another is labeled $f$,
+where your friend lives.
+
+Your goal will be to develop an algorithm to find the city $c$
+where you and your friend should meet.
+
+\begin{enumerate}
+  \item For each of the following algorithms, give a counterexample
+  (an example $G$ and the corresponding $c$) showing that the algorithm
+  \emph{does not work}.
+
+  \begin{enumerate}
+    \item Find the mid point of the shortest path from $y$ to $f$.
+    \item Find the mid point of the path from $y$ to $f$ in the minimum spanning tree of $G$.
+    \item Find the vertex $c$ that minimizes the sum of the shortest path
+    distance from $y$ to $c$ and the shortest path distance from $f$ to $c$.
+  \end{enumerate}
+
+  \item Give a (correct) algorithm to find $c$ and analyze its runtime.
+
+\end{enumerate}
+
+
+
+
+
+
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%
+\end{document}
