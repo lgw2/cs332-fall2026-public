@@ -1,0 +1,15 @@
+digraph G {
+    layout = circo;
+
+    F -> A;
+    A -> E;
+    E -> F;
+    F -> C;
+    C -> A;
+    C -> D;
+    E -> G;
+    G -> D;
+    D -> B;
+    B -> H;
+    H -> D;
+}
