@@ -1,0 +1,49 @@
+%!TEX TS-program = pdflatex
+%!TEX encoding = UTF-8 Unicode
+%!TEX spellcheck = English (Aspell)
+
+\documentclass[11pt]{article}
+\usepackage{lucy,handout,graphicx}
+
+% =========================================================
+\begin{document}
+
+
+\noindent 
+Suppose you decide to organize a Snakes and Ladders competition with $n$
+participants. In this competition, each game of Snakes and Ladders involves
+three players. After the game is finished, they are ranked first, second, and
+third.  Each player may be involved in any (non-negative) number of games, and
+the number need not be equal among players.
+
+At the end of the competition, $m$ games have been played.  You realize that you
+forgot to implement a proper rating system, and therefore decide to produce the
+overall ranking of all $n$ players as you see fit.  However, to avoid being too
+suspicious, if player $A$ ranked better than player $B$ in at least one game,
+then $A$ must rank better than $B$ in the overall ranking.
+
+You are given the list of players and their rankings in each of the $m$ games.
+Describe and analyze an algorithm that produces an overall ranking of the $n$
+players that is consistent with the individual game rankings, or correctly
+reports that no such ranking exists.
+
+You must give your algorithm as a reduction to a problem on graphs. Describe your algorithm by answering the following questions:
+
+\begin{itemize}\itemsep40pt
+\item What are the vertices?  What does each vertex represent?
+\item What are the edges?  Are they directed or undirected?
+\item If the vertices and/or edges have associated values, what are they?
+\item \textbf{What is the precise relationship between your graph and the stated problem?}
+\item What standard graph algorithm are you using to solve the problem?
+\item What is the running time of your entire algorithm, \emph{including} the time to build the graph, \emph{as a function of the original input parameters}?
+\end{itemize}
+
+\vspace{1in}
+
+
+
+
+%----------------------------------------------------------------------
+
+
+\end{document}
