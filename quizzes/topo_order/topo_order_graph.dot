@@ -1,0 +1,12 @@
+digraph G {
+    rankdir = LR;
+    layout = circo;
+    A -> B;
+    B -> C;
+    C -> E;
+    B -> E;
+    D -> E;
+    D -> B;
+    D -> A;
+    F -> G;
+}
