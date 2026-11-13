@@ -1,0 +1,60 @@
+%!TEX TS-program = pdflatex
+%!TEX encoding = UTF-8 Unicode
+%!TEX spellcheck = English (Aspell)
+
+\documentclass[11pt]{article}
+\usepackage{lucy,handout,graphicx}
+
+% =========================================================
+\begin{document}
+
+Below are a few graph problems that can be solved by reducing to
+computing optimal spanning trees or maximum bottleneck paths. (Recall that
+both of these can be done with variants of ``best'' first search!)
+
+Whenever you write an algorithm that reduces to a graph problem, make sure that someone
+can answer these questions when they read your solution:
+
+\begin{itemize}
+\item What are the vertices?  What does each vertex represent?
+\item What are the edges?  Are they directed or undirected?
+\item If the vertices and/or edges have associated values, what are they?
+\item \textbf{What is the precise relationship between your graph and the stated problem?}
+\item What standard graph algorithm are you using to solve the problem?
+\item What is the running time of your entire algorithm, \emph{including} the time to build the graph, \emph{as a function of the original input parameters}?
+\end{itemize}
+
+And as always, it's great to make up some examples to be sure you understand the problem
+you are trying to solve.
+
+\begin{enumerate}
+    \item An international conference has delegates speaking $n$ languages. There are $m$ pairs
+    of languages for which you can hire translators, but each one has a cost to
+    work the conference. A message may
+    pass through several translators.
+
+    \begin{enumerate}
+        \item Design and analyze an algorithm to decide whether the available translators
+        collectively allow communication between all $n$ languages.
+        \item Assuming communication is possible, design and analyze an algorithm to choose
+        the cheapest set of translators to allow communication between all $n$ languages.
+    \end{enumerate}
+    
+\item
+
+A museum must move a statue from its storage room $s$ to an exhibition room
+$t$. Rooms are connected by doorways, each with a known usable width. A statue
+of width $x$ can pass through a doorway exactly when the doorway's width is at
+least $x$. Assume height, turning space, and all other constraints are
+irrelevant.
+
+Design an algorithm to find the widest statue that can be moved from $s$ to
+$t$, and a route for moving it.
+
+\end{enumerate}
+
+
+%----------------------------------------------------------------------
+
+
+\end{document}
