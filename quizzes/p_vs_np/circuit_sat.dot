@@ -1,0 +1,25 @@
+// Circuit SAT instance: find inputs with OUT = 1.
+// OUT = (a OR b) AND (NOT c).
+// One satisfying assignment: a = 1, b = 0, c = 0.
+digraph CircuitSAT {
+    rankdir=LR;
+
+    node [shape=circle];
+    a;
+    b;
+    c;
+    { rank=same; a; b; c; }
+
+    node [shape=box];
+    or_gate  [label="OR"];
+    not_gate [label="NOT"];
+    and_gate [label="AND"];
+    out [ label="FINAL ANSWER"];
+
+    a -> or_gate;
+    b -> or_gate;
+    c -> not_gate;
+    or_gate -> and_gate;
+    not_gate -> and_gate;
+    and_gate -> out;
+}
